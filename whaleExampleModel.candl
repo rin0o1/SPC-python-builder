@@ -1,0 +1,47 @@
+colcpn  [whaleExampleModel]
+{
+constants:
+  valuesets[Main]
+
+all:
+//dimensions
+//instances
+
+colorsets:
+  Dot = {dot};
+  X = {1..DX};
+  Y = {1..DY};
+  Whale = {1..instances};
+  Grid2D = PROD(X,Y);
+
+variables:
+  X : x;
+  Y : y;
+  X : a;
+  Y : b;
+  Whale : f;
+
+colorfunctions:
+bool  movement(X x,Y y,X a,Y b) { (a=x-1|a=x|a=x+1) & (b=y-1|b=y|b=y+1) & (!(a=x & b=y))  };
+
+places:
+continuous:
+  Grid2D Food_Source = 3`all;
+  Whale whale_mounth = 0`all;
+  Whale stomach = 0`all;
+
+transitions:
+continuous:
+  Food_Movement
+ {[movement(x,y,a,b)]}
+    : 
+    : [Food_Source + {(x,y)}] & [Food_Source - {(a,b)}]
+    : MassAction(1)
+    ;
+  esophagus
+    : 
+    : [stomach + {f}] & [whale_mounth - {f}]
+    : MassAction(1)
+    ;
+
+}
