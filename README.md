@@ -16,7 +16,7 @@ For additional information regarding this tool: []
     - an ANDL file (generated-andl.andl) unfolding the CANDL provided
     - a SPC code (spcOut.spc) 
 
-## Requirements:
+## Requirements:
     - Spike installed and set within the environment path
 
 ## How to use
