@@ -30,21 +30,21 @@ class BuilderANDL:
         for i in range(0,nls):
             l = lns[i]
             l += "\n"
-            if Constants.CANDL_COMMENT_FOR_INSTANCES in l:
+            if "//"+Constants.CANDL_COMMENT_NUMBER_OF_INSTANCE_COMPLEX_OBJECT in l:
                 pnts.append(i+1)
-            if Constants.CANDL_COMMENT_FOR_DIMENSIONS in l:
+            if "//"+Constants.CANDL_COMMENT_DIMENSIONS in l:
                 pnts.append(i+1)
         
         for i in range(len(pnts)-1, -1, -1):
             pnt = pnts[i]
 
             if i == 0:
-                x = f"\tint DX = " + str(self.o.x) + "; \n"
-                y = f"\tint DY = " + str(self.o.x) + "; \n"
+                x = f"\tint {Constants.CANDL_GRID_DIMENSION_X} = " + str(self.o.x) + "; \n"
+                y = f"\tint {Constants.CANDL_GRID_DIMENSION_Y} = " + str(self.o.y) + "; \n"
                 lns[pnt] = x + y
             
             if i == 1:
-                inst = f"\tint instances = " + str(self.o.nco) + " ;\n"
+                inst = f"\tint {Constants.CANDL_INSTANCES} = " + str(self.o.nco) + " ;\n"
                 lns[pnt] = inst
     
     def exportLines(self, lns):

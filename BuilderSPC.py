@@ -63,7 +63,8 @@ class BuilderSPC:
             for _y in range(1, y+1):
                 # for each available xs within the grid environment
                 for _x in range(1, x+1):
-                    spc += f'{m.t(1)}{"if" if _x<=1 and _y<=1 else "else if"}(X_{id} == {_x} && Y_{id} == {_y}) {"{"}{m.n()}'
+                    isIf = "if" if _x<=1 and _y<=1 else "else if"
+                    spc += f'{m.t(1)}{isIf}(X_{id} == {_x} && Y_{id} == {_y}) {"{"}{m.n()}'
                     spc += f'{m.t(2)}// add here your code when complex object {id} {m.n()}'
                     spc += f'{m.t(2)}// is in location {_x};{_y}{m.n()}'
                     spc += f'{m.t(1)}{"}"}{m.n()}'
