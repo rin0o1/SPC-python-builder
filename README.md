@@ -1,6 +1,6 @@
 # SPC-python-builder
 
-This script automatically generates SPC code and ANDL files to design Petri Nets models requiring mobility using the Hyrbid Approach.
+This script automatically generates the SPC code and the ANDL file to design Petri Nets models requiring mobility using the Hyrbid Approach.
 For additional information regarding this tool: []
 
 ## Input Parameters:
