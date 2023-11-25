@@ -1,7 +1,7 @@
 # SPC-python-builder
 
 This script automatically generates the SPC code and the ANDL file to design Petri Nets models requiring mobility using the Hyrbid Approach.
-For additional information regarding this tool: []
+For additional information regarding this tool: http://people.brunel.ac.uk/~csstdrg/projects/leverhulme_emeritus/info.html], 
 
 ## Input Parameters:
 
@@ -20,8 +20,8 @@ For additional information regarding this tool: []
     - Spike installed and set within the environment path
 
 ## How to use
-    1) prepare your candl for the BuilderANDL as described in this article []
-    2) write your SPC code within the BuilderSPC as illustrate in this article []
+    1) prepare your candl for the BuilderANDL as described in this article http://people.brunel.ac.uk/~csstdrg/projects/leverhulme_emeritus/info.html], 
+    2) write your SPC code within the BuilderSPC as illustrated in this article http://people.brunel.ac.uk/~csstdrg/projects/leverhulme_emeritus/info.html], 
 
 ## Run the script
     python3 builder.py --x=x_grid_environment --y=y_grid_environment --o=no_complex_obejcts --c=candl_path
